@@ -1,0 +1,25 @@
+{
+  "name": "plantshop",
+  "version": "1.0.0",
+  "description": "plantshop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nhu",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp-sass": "^5.1.0"
+  },
+  "dependencies": {
+    "browser-sync": "^2.27.11",
+    "cssnano": "^5.1.15",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^9.0.1",
+    "gulp-terser": "^2.1.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "merge2": "^1.4.1",
+    "postcss": "^8.4.21",
+    "sass": "^1.58.2"
+  }
+}

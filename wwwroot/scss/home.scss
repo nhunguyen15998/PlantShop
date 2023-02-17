@@ -1,0 +1,61 @@
+$fontFamily: 'Work Sans';
+
+body {
+    background: #FFFFFF;
+    position: relative;
+    font-family: $fontFamily;
+    font-style: normal;
+    #home {
+        background-image: url('http://127.0.0.1:5555/wwwroot/images/modern-living-room-interior-with-sofa-green-plants-lamp-table-dark-wall-background 1.png');
+        background-repeat: no-repeat;
+        background-size: contain;    
+        #first-section {
+            a, p {
+                color: #fff;
+                text-align: center;
+            }
+            header {
+                position: absolute;
+                height: 46px;
+                left: 119px;
+                top: 57px;
+                .container {
+                    display: flex;
+                    justify-content: center;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 24px;
+                    line-height: 28px;
+                    text-align: center;
+                    a {
+                        font-weight: 600;
+                        font-size: 24px;
+                        line-height: 28.15px;
+                        font-weight: 400;
+                    }
+                    .active a, .nav>li>a:focus, .nav>li>a:hover {
+                        background: -webkit-linear-gradient(left, #2AF598, #009EFD 100%);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+                }
+            }
+            .first-section-title {
+                padding: 64px 0;
+                p:nth-child(1) {
+                    font-weight: 700;
+                    font-size: 82px;
+                    line-height: 96.19px;
+                    position: absolute;
+                    left: 300px;
+                    top: 185px;
+                }
+                p:nth-child(2) {
+                    font-weight: 700;
+                    font-size: 24px;
+                    line-height: 36px;
+                }
+            }
+        }
+    }
+}
