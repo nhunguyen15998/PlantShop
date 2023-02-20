@@ -46,9 +46,8 @@ body .container-fluid .header-area header .navigation-bar .nav > li > a:hover {
   font-weight: 700;
 }
 body .container-fluid .header-area header .navigation-bar .shopping-bag {
+  display: block;
   position: absolute;
-  right: 0;
-  top: 35%;
 }
 body .container-fluid .header-area header .navigation-bar .shopping-bag i {
   font-size: 32px;
@@ -66,6 +65,9 @@ body .container-fluid .header-area header .navigation-bar .shopping-bag div {
 body .container-fluid .header-area header .navigation-bar .shopping-bag div span {
   display: block;
   text-align: center;
+}
+body .container-fluid .header-area header .navigation-bar .navbar-header {
+  position: relative;
 }
 @media (min-width: 768px) {
   body .container-fluid .header-area header .navigation-bar .navbar > .container {
@@ -96,6 +98,24 @@ body .container-fluid .header-area header .navigation-bar .shopping-bag div span
     display: inline-block !important;
     width: auto;
     clear: none;
+  }
+  body .container-fluid .header-area header .navigation-bar .shopping-bag {
+    display: block;
+    right: 0;
+    top: 35%;
+  }
+  body .container-fluid .header-area header .navigation-bar .navbar-header .shopping-bag {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  body .container-fluid .header-area header .navigation-bar .shopping-bag {
+    display: none;
+  }
+  body .container-fluid .header-area header .navigation-bar .navbar-header .shopping-bag {
+    display: block;
+    right: 15%;
+    top: 15%;
   }
 }
 @media (max-width: 767px) {

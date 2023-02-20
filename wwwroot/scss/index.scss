@@ -45,9 +45,8 @@ body {
                         font-weight: 700;
                     }
                     .shopping-bag {
+                        display: block;
                         position: absolute;
-                        right: 0;
-                        top: 35%;
                         i {
                             font-size: 32px;
                             color: white;
@@ -65,6 +64,9 @@ body {
                                 text-align: center;
                             }
                         }
+                    } 
+                    .navbar-header {
+                        position: relative;
                     }
                     @media (min-width:768px) {
                         .navbar>.container {
@@ -95,6 +97,24 @@ body {
                             display: inline-block !important;
                             width: auto;
                             clear: none;
+                        }
+                        .shopping-bag {
+                            display: block;
+                            right: 0;
+                            top: 35%;
+                        } 
+                        .navbar-header .shopping-bag {
+                            display: none;
+                        }  
+                    }
+                    @media (max-width: 768px) {
+                        .shopping-bag {
+                            display: none;
+                        }
+                        .navbar-header .shopping-bag {
+                            display: block;
+                            right: 15%;
+                            top: 15%;
                         }
                     }
                 } 
