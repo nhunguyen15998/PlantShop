@@ -1,12 +1,12 @@
-$fontFamily: 'Work Sans';
+@import "./variables.scss";
 
 body {
     background: #FFFFFF;
     position: relative;
-    font-family: $fontFamily;
+    font-family: $fontWorkSan;
     font-style: normal;
     #home {
-        background-image: url('http://127.0.0.1:5555/wwwroot/images/modern-living-room-interior-with-sofa-green-plants-lamp-table-dark-wall-background 1.png');
+        background-image: url('../images/modern-living-room-interior-with-sofa-green-plants-lamp-table-dark-wall-background 1.png');
         background-repeat: no-repeat;
         background-size: contain;    
         #first-section {
@@ -15,10 +15,6 @@ body {
                 text-align: center;
             }
             header {
-                position: absolute;
-                height: 46px;
-                left: 119px;
-                top: 57px;
                 .container {
                     display: flex;
                     justify-content: center;
@@ -46,9 +42,6 @@ body {
                     font-weight: 700;
                     font-size: 82px;
                     line-height: 96.19px;
-                    position: absolute;
-                    left: 300px;
-                    top: 185px;
                 }
                 p:nth-child(2) {
                     font-weight: 700;

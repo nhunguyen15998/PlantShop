@@ -1,0 +1,340 @@
+@import "./variables.scss";
+
+body {
+    background: #FFFFFF;
+    font-family: $fontWorkSan;
+    a, p {
+        color: #111;
+    }
+    .container-fluid {
+        padding: 0;
+        //header
+        .header-area {
+            position: relative;
+            header {
+                background-image: url('../images/modern-living-room-interior-with-sofa-green-plants-lamp-table-dark-wall-background-1.png');
+                background-repeat: no-repeat;
+                background-size: cover; 
+                //navigation bar 
+                .navigation-bar {
+                    position: relative;
+                    .navbar .container {
+                        margin: 50px 0 35px;
+                    }
+                    .navbar-toggle .icon-bar {
+                        background-color: #fff;
+                        width: 30px;
+                        height: 4px
+                    }
+                    .nav a {
+                        font-size: 24px;
+                        font-weight: 300;
+                        color: white;
+                        text-align: center;
+                        padding: 10px 9px;;
+                    }
+                    .nav>li {
+                        min-width: 150px;
+                    }
+                    .nav .active a, 
+                    .nav>li>a:focus, 
+                    .nav>li>a:hover {
+                        background: -webkit-linear-gradient(left, #2AF598, #009EFD 100%);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        font-weight: 700;
+                    }
+                    .shopping-bag {
+                        position: absolute;
+                        right: 0;
+                        top: 35%;
+                        i {
+                            font-size: 32px;
+                            color: white;
+                        }
+                        div {
+                            height: 22px;
+                            width: 22px;
+                            background-image: url("../images/ellipse-5.png");
+                            background-repeat: no-repeat;
+                            position: absolute;
+                            right: -7px;
+                            top: 0;
+                            span {
+                                display: block;
+                                text-align: center;
+                            }
+                        }
+                    }
+                    @media (min-width:768px) {
+                        .navbar>.container {
+                            text-align: center;
+                        }
+                        .navbar-header {
+                            float: none;
+                            display: inline-block;
+                        }
+                        .navbar-brand {
+                            float: none;
+                            display: inline-block;
+                        }
+                        .navbar .navbar-nav {
+                            float: none;
+                            display: inline-block;
+                            clear: none;
+                        }
+                        .navbar .navbar-nav>li {
+                            float: none;
+                            display: inline-block;
+                        }
+                        .navbar .navbar-nav>li li {
+                            text-align: left
+                        }
+                        .collapse.navbar-collapse#centerednav {
+                            float: none;
+                            display: inline-block !important;
+                            width: auto;
+                            clear: none;
+                        }
+                    }
+                } 
+                @media (max-width:767px) {
+                    .navigation-bar {
+                        width: 90%;
+                    }
+                } 
+                //header banner
+                .header-banner {
+                    display: flex;
+                    flex-direction: column;
+                    h2, p {
+                        color: white;
+                        text-align: center;
+                    }
+                    h2 {
+                        font-weight: 700;
+                        font-size: 82px;
+                        line-height: 96px;
+                        width: 80%;
+                        margin: 0 auto 20px;
+                    } 
+                    p {
+                        font-weight: 400;
+                        font-size: 24px;
+                        line-height: 36px;
+                        width: 40%;
+                        margin: 0 auto 30px;
+                    }
+                }
+                //header banner search
+                .header-banner-search {
+                    display: flex;
+                    justify-content: center;
+                    form {
+                        position: relative;
+                    }
+                    input[type="search"] {
+                        padding: 15px 70px 15px 30px;
+                        width: 463px;
+                        color: white;
+                        height: 65px;
+                        font-size: 20px;
+                        font-weight: 400;
+                        background: rgba(255, 255, 255, 0.2);
+                        border: 1px solid #FFFFFF;
+                        border-radius: 50px;
+                        outline: transparent;
+                    }
+                    input[type="search"]::placeholder {
+                        color: white;
+                    }
+                    button[type="submit"] {
+                        background-image: url("../images/ellipse-1.png");
+                        background-repeat: no-repeat;
+                        width: 50px;
+                        height: 50px;
+                        background-color: transparent;
+                        border: none;
+                        position: absolute;
+                        top: 10%;
+                        right: 2%;
+                        iconify-icon {
+                            display: block;
+                            text-align: center;
+                            font-size: 35px;
+                            color: white;
+                        }
+                    }
+                }
+            }
+            // banner width
+            @media (max-width:1469px) {
+                header {
+                    height: 990px;
+                }
+            }
+            @media (min-width:1470px) {
+                header {
+                    height: 1040px;
+                }
+            }
+            @media (min-width:1575px) {
+                header {
+                    height: 1189px;
+                }
+            }
+            @media (min-width:1730px) {
+                header {
+                    height: 1289px;
+                }
+            }
+            @media (min-width:1880px) {
+                header {
+                    height: 1389px;
+                }
+            }
+            @media (min-width:1880px) {
+                header {
+                    height: 1389px;
+                }
+            }
+            @media (min-width:2020px) {
+                header {
+                    height: 1489px;
+                }
+            }
+            @media (min-width:2110px) {
+                header {
+                    height: 1500px;
+                }
+            }
+            @media (min-width:2190px) {
+                header {
+                    height: 1550px;
+                }
+            }
+            @media (min-width:2260px) {
+                header {
+                    height: 1600px;
+                }
+            }
+            @media (min-width:2340px) {
+                header {
+                    height: 1620px;
+                }
+            }
+            @media (min-width:2410px) {
+                header {
+                    height: 1700px;
+                }
+            }
+            @media (min-width:2480px) {
+                header {
+                    height: 1750px;
+                }
+            }
+            @media (min-width:2555px) {
+                header {
+                    height: 1800px;
+                }
+            }
+            @media (min-width:2655px) {
+                header {
+                    height: 1850px;
+                }
+            }
+            @media (min-width:2755px) {
+                header {
+                    height: 1900px;
+                }
+            }
+            @media (min-width:2855px) {
+                header {
+                    height: 1950px;
+                }
+            }
+            @media (min-width:2920px) {
+                header {
+                    height: 2000px;
+                }
+            }
+            //end banner width
+            
+            //header background gradient
+            .header-background-gradient {
+                background-image: url("../images/rectangle-1.png");
+                height: 200px;
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+            }
+
+        }
+        //content
+        .content {
+            margin-top: 200px;
+            .highlight {
+                margin-bottom: 145.5px;
+                .highlight-items {
+                    display: flex;
+                    align-items: center;
+                    .col-md-2 {
+                        padding: 0 0 0 12px;
+                    }
+                    img {
+                        width: 55px;
+                    }
+                    h4 {
+                        font-size: 25px;
+                    }
+                    p {
+                        font-size: 15px;
+                        color: #828282;
+                    }
+                }
+                .col-md-4:nth-child(2) .highlight-items {
+                    justify-content: center;
+                }
+                .col-md-4:nth-child(3) .highlight-items {
+                    justify-content: end;
+                }
+            }
+            .best-seller {
+                .row {
+                    display: flex;
+                    align-items: center;
+                    h1 {
+                        font-size: 45px;
+                    }
+                    .col-md-3 {
+                        position: relative;
+                        .product-item {
+                            background: #C1D0E4;
+                            border-radius: 50px;
+                            height: 400px;
+                            display: flex;
+                            align-items: end;
+                            justify-content: center;
+                            img {
+                                width: 250px;
+                                position: absolute;
+                                top: -115px;
+                            }
+                            .product-card {
+                                display: block;
+                                padding: 26px 38px;
+                                background: #FFFFFF;
+                                border-radius: 43px;
+                                filter: drop-shadow(0px 4px 30px rgba(221, 218, 218, 0.25));
+                                width: 100%;
+                                height: 220px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+

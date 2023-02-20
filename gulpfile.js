@@ -1,16 +1,18 @@
 const { src, dest, watch, series } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
-const postcss = require('gulp-postcss');
-const cssnano = require('cssnano');
-const terser = require('gulp-terser');
+//const postcss = require('gulp-postcss');
+//const cssnano = require('cssnano');
+//const terser = require('gulp-terser');
+// const rename = require('gulp-rename');
 const browsersync = require('browser-sync').create();
 
 // Sass Task
 function scssTask(){
-  return src('wwwroot/scss/*.scss', { sourcemaps: true })
+  return src('wwwroot/scss/*.scss')
     .pipe(sass())
-    .pipe(postcss([cssnano()]))
-    .pipe(dest('wwwroot/css', { sourcemaps: '.' }));
+    //.pipe(postcss([cssnano()]))
+    // .pipe(rename({ extname: '.min.js' }))
+    .pipe(dest('wwwroot/css'));
 }
 
 // JavaScript Task

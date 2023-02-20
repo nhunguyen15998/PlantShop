@@ -1,2 +1,48 @@
-body{background:#fff;font-family:Work Sans;font-style:normal;position:relative}body #home{background-image:url(http://127.0.0.1:5555/wwwroot/images/modern-living-room-interior-with-sofa-green-plants-lamp-table-dark-wall-background%201.png);background-repeat:no-repeat;background-size:contain}body #home #first-section a,body #home #first-section p{color:#fff;text-align:center}body #home #first-section header{height:46px;left:119px;position:absolute;top:57px}body #home #first-section header .container{display:flex;font-size:24px;font-style:normal;font-weight:600;justify-content:center;line-height:28px;text-align:center}body #home #first-section header .container a{font-size:24px;font-weight:600;font-weight:400;line-height:28.15px}body #home #first-section header .container .active a,body #home #first-section header .container .nav>li>a:focus,body #home #first-section header .container .nav>li>a:hover{-webkit-text-fill-color:transparent;background:-webkit-linear-gradient(left,#2af598,#009efd 100%);-webkit-background-clip:text}body #home #first-section .first-section-title{padding:64px 0}body #home #first-section .first-section-title p:first-child{font-size:82px;font-weight:700;left:300px;line-height:96.19px;position:absolute;top:185px}body #home #first-section .first-section-title p:nth-child(2){font-size:24px;font-weight:700;line-height:36px}
-/*# sourceMappingURL=home.css.map */
+body {
+  background: #FFFFFF;
+  position: relative;
+  font-family: "Work Sans", sans-serif;
+  font-style: normal;
+}
+body #home {
+  background-image: url("../images/modern-living-room-interior-with-sofa-green-plants-lamp-table-dark-wall-background 1.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+body #home #first-section a, body #home #first-section p {
+  color: #fff;
+  text-align: center;
+}
+body #home #first-section header .container {
+  display: flex;
+  justify-content: center;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+}
+body #home #first-section header .container a {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28.15px;
+  font-weight: 400;
+}
+body #home #first-section header .container .active a, body #home #first-section header .container .nav > li > a:focus, body #home #first-section header .container .nav > li > a:hover {
+  background: -webkit-linear-gradient(left, #2AF598, #009EFD 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+body #home #first-section .first-section-title {
+  padding: 64px 0;
+}
+body #home #first-section .first-section-title p:nth-child(1) {
+  font-weight: 700;
+  font-size: 82px;
+  line-height: 96.19px;
+}
+body #home #first-section .first-section-title p:nth-child(2) {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+}
