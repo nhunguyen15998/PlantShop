@@ -46,7 +46,6 @@ body .container-fluid .header-area header .navigation-bar .nav > li > a:hover {
   font-weight: 700;
 }
 body .container-fluid .header-area header .navigation-bar .shopping-bag {
-  display: block;
   position: absolute;
 }
 body .container-fluid .header-area header .navigation-bar .shopping-bag i {
@@ -99,21 +98,16 @@ body .container-fluid .header-area header .navigation-bar .navbar-header {
     width: auto;
     clear: none;
   }
-  body .container-fluid .header-area header .navigation-bar .shopping-bag {
-    display: block;
-    right: 0;
-    top: 35%;
+  body .container-fluid .header-area header .navigation-bar .navbar-header {
+    width: 100%;
   }
   body .container-fluid .header-area header .navigation-bar .navbar-header .shopping-bag {
-    display: none;
+    right: 0;
+    margin-top: 4px;
   }
 }
 @media (max-width: 768px) {
-  body .container-fluid .header-area header .navigation-bar .shopping-bag {
-    display: none;
-  }
   body .container-fluid .header-area header .navigation-bar .navbar-header .shopping-bag {
-    display: block;
     right: 15%;
     top: 15%;
   }

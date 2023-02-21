@@ -45,7 +45,6 @@ body {
                         font-weight: 700;
                     }
                     .shopping-bag {
-                        display: block;
                         position: absolute;
                         i {
                             font-size: 32px;
@@ -98,21 +97,16 @@ body {
                             width: auto;
                             clear: none;
                         }
-                        .shopping-bag {
-                            display: block;
-                            right: 0;
-                            top: 35%;
-                        } 
+                        .navbar-header {
+                            width: 100%;
+                        }
                         .navbar-header .shopping-bag {
-                            display: none;
+                            right: 0;
+                            margin-top: 4px;
                         }  
                     }
                     @media (max-width: 768px) {
-                        .shopping-bag {
-                            display: none;
-                        }
                         .navbar-header .shopping-bag {
-                            display: block;
                             right: 15%;
                             top: 15%;
                         }
