@@ -16,11 +16,11 @@ function scssTask(){
 }
 
 // JavaScript Task
-// function jsTask(){
-//   return src('wwwroot/js/*.js', { sourcemaps: true })
-//     .pipe(terser())
-//     .pipe(dest('wwwroot/js', { sourcemaps: '.' }));
-// }
+function jsTask(){
+  return src('wwwroot/js/*.js', { sourcemaps: true })
+    .pipe(terser())
+    .pipe(dest('wwwroot/js', { sourcemaps: '.' }));
+}
 
 // Browsersync Tasks
 function browsersyncServe(cb){
@@ -42,7 +42,7 @@ function watchTask(){
   watch('*.html', browsersyncReload);
   watch(['wwwroot/scss/*.scss', 'wwwroot/js/*.js'], 
           series(scssTask, 
-                 //jsTask, 
+                 jsTask, 
                  browsersyncReload
                 ));
 }
@@ -50,7 +50,7 @@ function watchTask(){
 // Default Gulp task
 exports.default = series(
   scssTask,
-  // jsTask,
+  jsTask,
   browsersyncServe,
   watchTask
 );

@@ -24,6 +24,8 @@
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="~/css/index.css">
+    <link rel="stylesheet" href="~/css/sidebar.css">
+    <script src="~/js/sidebar.js"></script>
 </head>
 <body>
     <div class="container-fluid">
@@ -33,13 +35,53 @@
                     <div class="navbar" role="navigation">
                         <div class="container">
                             <div class="navbar-header">
-                                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                @* <button type="button" class="navbar-toggle" data-toggle="collapse"
                                     data-target=".navbar-collapse">
                                     <span class="sr-only">Toggle navigation</span>
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
-                                </button>
+                                </button> *@
+                                <div class="toggle">
+                                    <a href="#" class="burger js-menu-toggle" data-toggle="collapse" data-target="#main-navbar">
+                                        <span></span>
+                                    </a>
+                                </div>
+                                <aside class="sidebar">
+                                    <div class="side-inner">
+                                        <div class="profile">
+                                            <img src="images/person_profile.jpg" alt="Image" class="img-fluid">
+                                            <h3 class="name">Debby Williams</h3>
+                                            <span class="country">New York, USA</span>
+                                        </div>
+                                        <div class="counter d-flex justify-content-center">
+
+                                            <div class="col">
+                                                <strong class="number">892</strong>
+                                                <span class="number-label">Posts</span>
+                                            </div>
+                                            <div class="col">
+                                                <strong class="number">22.5k</strong>
+                                                <span class="number-label">Followers</span>
+                                            </div>
+                                            <div class="col">
+                                                <strong class="number">150</strong>
+                                                <span class="number-label">Following</span>
+                                            </div>
+
+                                        </div>
+                                        <div class="nav-menu">
+                                            <ul>
+                                                <li class="active"><a href="#"><span class="icon-home mr-3"></span>Feed</a></li>
+                                                <li><a href="#"><span class="icon-search2 mr-3"></span>Explore</a></li>
+                                                <li><a href="#"><span class="icon-notifications mr-3"></span>Notifications</a></li>
+                                                <li><a href="#"><span class="icon-location-arrow mr-3"></span>Direct</a></li>
+                                                <li><a href="#"><span class="icon-pie-chart mr-3"></span>Stats</a></li>
+                                                <li><a href="#"><span class="icon-sign-out mr-3"></span>Sign out</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </aside>
                                 <div class="shopping-bag">
                                     <i class="fa-solid fa-bag-shopping"></i>
                                     <div><span>1</span></div>

@@ -47,6 +47,7 @@ body .container-fluid .header-area header .navigation-bar .nav > li > a:hover {
 }
 body .container-fluid .header-area header .navigation-bar .shopping-bag {
   position: absolute;
+  right: 13%;
 }
 body .container-fluid .header-area header .navigation-bar .shopping-bag i {
   font-size: 32px;
@@ -102,14 +103,7 @@ body .container-fluid .header-area header .navigation-bar .navbar-header {
     width: 100%;
   }
   body .container-fluid .header-area header .navigation-bar .navbar-header .shopping-bag {
-    right: 0;
     margin-top: 4px;
-  }
-}
-@media (max-width: 768px) {
-  body .container-fluid .header-area header .navigation-bar .navbar-header .shopping-bag {
-    right: 23%;
-    top: 15%;
   }
 }
 @media (max-width: 767px) {
