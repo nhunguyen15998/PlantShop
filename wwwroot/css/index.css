@@ -108,7 +108,7 @@ body .container-fluid .header-area header .navigation-bar .navbar-header {
 }
 @media (max-width: 768px) {
   body .container-fluid .header-area header .navigation-bar .navbar-header .shopping-bag {
-    right: 15%;
+    right: 23%;
     top: 15%;
   }
 }
