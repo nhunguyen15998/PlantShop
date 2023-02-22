@@ -6,6 +6,10 @@ body {
     a, p {
         color: #111;
     }
+    img {
+        user-select: none;
+        -webkit-user-drag: none;
+    }
     .container-fluid {
         padding: 0;
         //header
@@ -103,6 +107,7 @@ body {
                         }
                         .navbar-header .shopping-bag {
                             margin-top: 4px;
+                            right: 0;
                         }  
                     }
                 } 
@@ -240,7 +245,7 @@ body {
             }
             @media (max-width: 768px) {
                 .highlight {
-                    margin-bottom: 145.5px;
+                    margin-bottom: 50px;
                 }
             }
             .best-seller {
@@ -335,11 +340,17 @@ body {
             }
             @media (max-width: 768px) {
                 .best-seller {
-                    margin-bottom: 0;
+                    margin-bottom: 60px;
                     .row {
                         flex-direction: column;
-                        .col-xs-8 {
+                        .best-seller-title {
+                            text-align: center;
+                        }
+                        .col-xs-10:not(:last-child) {
                             margin-bottom: 180px;
+                        }
+                        .product-item .product-card .product-price {
+                            justify-content: space-between;
                         }
                     }
                 }
@@ -372,14 +383,20 @@ body {
             }
             @media (max-width: 768px) {
                 .reference {
-                    margin-bottom: 0;
+                    margin-bottom: 50px;
+                    .reference-title {
+                        margin-bottom: 45px;
+                        h2 {
+                            font-size: 45px;
+                        }
+                        p {
+                            font-size: 18px;
+                        }
+                    }
                     .reference-collection {
                         display: block;
                         .col-xs-12:first-child img {
                             margin-bottom: 50px;
-                        }
-                        .col-xs-12:last-child {
-                            margin-bottom: 180px;
                         }
                     }
                 }
@@ -433,18 +450,33 @@ body {
                         margin-bottom: 0;
                         text-align: center;
                         .feature-title {
-                            margin-bottom: 80px;
+                            margin-bottom: 30px;
                             h3 {
                                 width: 100%;
                             }
                         }
                         .feature-points {
                             .row {
-                                margin-bottom: 50px;
+                                margin-bottom: 20px;
                             }
                         }
                     }
                 }
+                @media (max-width: 768px) {
+                    .feature-content .feature-title {
+                        h3 {
+                            font-size: 45px;
+                        }
+                        small {
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+        @media (max-width: 768px) {
+            .content {
+                margin: 50px auto;
             }
         }
     }
@@ -486,7 +518,7 @@ body {
                         right: 44px;
                     }
                 }
-                @media (max-width: 992px) {
+                @media (max-width: 991px) {
                     button {
                         right: 80px;
                     }
@@ -522,6 +554,17 @@ body {
                 color: white;
                 text-align: center;
                 margin: 25px 0 80px;
+            }
+            @media (max-width: 768px) {
+                .footer-info {
+                    padding-top: 20px;
+                }
+                .footer-copyright p {
+                    margin-bottom: 40px;
+                }
+                hr {
+                    margin: 0;
+                }
             }
         }
     }
