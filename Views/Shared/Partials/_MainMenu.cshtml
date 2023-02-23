@@ -1,0 +1,52 @@
+<div class="container navigation-bar">
+    <div class="navbar" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <div class="toggle">
+                    <a href="#" class="burger js-menu-toggle" data-toggle="collapse" data-target="#main-navbar">
+                        <span></span>
+                    </a>
+                </div>
+                <div class="scroll-top-menu">
+                    <a class="btn-scroll-top">
+                        <span class="material-symbols-outlined">arrow_upward</span>
+                    </a>
+                </div>
+                <aside class="sidebar">
+                    <div class="side-inner">
+                        <div class="profile">
+                            <img src="~/images/brown-sofa-wooden-table-living-room-interior-with-plant-concrete-wall.png"
+                                alt="Image" class="img-fluid">
+                            <h3 class="name">Debby Williams</h3>
+                            <span class="country">New York, USA</span>
+                            <a style="display: block;">Sign in / Register</a>
+                        </div>
+                        <div class="nav-menu">
+                            <ul>
+                                <li class="active"><a href="#"><span class="icon-home mr-3"></span>Home</a></li>
+                                <li><a href="#"><span class="icon-search2 mr-3"></span>Shop</a></li>
+                                <li><a href="#"><span class="icon-notifications mr-3"></span>About Us</a></li>
+                                <li><a href="#"><span class="icon-location-arrow mr-3"></span>Contact</a></li>
+                                <li><a href="#"><span class="icon-location-arrow mr-3"></span>Log In/Register</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+                <div class="shopping-bag">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <div><span>1</span></div>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse" id="centerednav">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href='@Url.ActionLink("SignIn", "Home")'>Log In/Register</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

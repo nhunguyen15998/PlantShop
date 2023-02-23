@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>@(ViewData["Title"] ?? "Home")</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,700;1,300;1,600&display=swap"
@@ -30,129 +30,27 @@
     <link rel="stylesheet" type="text/css" href="~/css/index.css">
     <link rel="stylesheet" href="~/css/sidebar.css">
     <script src="~/js/sidebar.js"></script>
+    @if (ViewData["Title"]?.ToString() == "Sign In")
+    {
+        RenderSection("SignInStyle");
+    }
 </head>
 
 <body>
     <div class="container-fluid">
-        <div class="header-area">
-            <header>
-                <div class="container navigation-bar">
-                    <div class="navbar" role="navigation">
-                        <div class="container">
-                            <div class="navbar-header">
-                                <div class="toggle">
-                                    <a href="#" class="burger js-menu-toggle" data-toggle="collapse"
-                                        data-target="#main-navbar">
-                                        <span></span>
-                                    </a>
-                                </div>
-                                <div class="scroll-top-menu">
-                                    <a class="btn-scroll-top">
-                                        <span class="material-symbols-outlined">arrow_upward</span>
-                                    </a>
-                                </div>
-                                <aside class="sidebar">
-                                    <div class="side-inner">
-                                        <div class="profile">
-                                            <img src="~/images/brown-sofa-wooden-table-living-room-interior-with-plant-concrete-wall.png"
-                                                alt="Image" class="img-fluid">
-                                            <h3 class="name">Debby Williams</h3>
-                                            <span class="country">New York, USA</span>
-                                            <a style="display: block;">Sign in / Register</a>
-                                        </div>
-                                        <div class="nav-menu">
-                                            <ul>
-                                                <li class="active"><a href="#"><span class="icon-home mr-3"></span>Home</a></li>
-                                                <li><a href="#"><span class="icon-search2 mr-3"></span>Shop</a></li>
-                                                <li><a href="#"><span class="icon-notifications mr-3"></span>About Us</a></li>
-                                                <li><a href="#"><span class="icon-location-arrow mr-3"></span>Contact</a></li>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </aside>
-                                <div class="shopping-bag">
-                                    <i class="fa-solid fa-bag-shopping"></i>
-                                    <div><span>1</span></div>
-                                </div>
-                            </div>
-                            <div class="collapse navbar-collapse" id="centerednav">
-                                <ul class="nav navbar-nav">
-                                    <li class="active"><a href="#">Home</a></li>
-                                    <li><a href="#">Shop</a></li>
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Contact</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="header-banner">
-                    <h2>Bring Serenity to Your Place With Interior Plants</h2>
-                    <p>find your dream plant for you home decoration with us, and we will make it happen.</p>
-                </div>
-                <div class="header-banner-search">
-                    <form action="" method="get">
-                        <input type="search" placeholder="Search plant" />
-                        <button type="submit">
-                            <iconify-icon icon="majesticons:search-line"></iconify-icon>
-                        </button>
-                    </form>
-                </div>
-            </header>
-            <div class="header-background-gradient"></div>
-        </div>
+        @if (ViewData["Title"]?.ToString() != "Sign In") {
+            <div class="header-area">
+                @await Html.PartialAsync("~/Views/Shared/Partials/_Header.cshtml")
+                <div class="header-background-gradient"></div>
+            </div>
+        }
         <div class="content container">
             @RenderBody()
         </div>
     </div>
-    <footer class="footer">
-        <div class="container">
-            <div class="row footer-info">
-                <div class="col-sm-12 col-md-4 col-lg-4 left">
-                    <h2>Newsletter</h2>
-                    <div>
-                        <input type="text" name="email" id="" placeholder="Enter your email">
-                        <button type="button">Subscribe</button>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-4 col-lg-3 center">
-                    <div class="row">
-                        <div class="col-sm-6 col-md-5 col-lg-5">
-                            <h5>Support</h5>
-                            <p>About Us</p>
-                            <p>Careers</p>
-                            <p>Blog</p>
-                        </div>
-                        <div class="col-sm-6 col-md-7 col-lg-7">
-                            <h5>Useful Links</h5>
-                            <p>Payment & Tax</p>
-                            <p>Terms of service</p>
-                            <p>Privacy Policy</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-4 col-lg-5 right">
-                    <div class="row">
-                        <div class="col-sm-6 col-md-5 col-lg-4">
-                            <h5>Our Menu</h5>
-                            <p>Best Product</p>
-                            <p>Category</p>
-                        </div>
-                        <div class="col-sm-6 col-md-7 col-lg-8">
-                            <h5>Address</h5>
-                            <p>JL. Setiabudhi No. 193 Sukasari, Bandung West Java, Indonesia</p>
-                            <p>hallo@daunku.com</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="row footer-copyright">
-                <p>© 2023 davixq - All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    @if (ViewData["Title"]?.ToString() != "Sign In") {
+        @await Html.PartialAsync("~/Views/Shared/Partials/_Footer.cshtml")
+    }
     @* <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

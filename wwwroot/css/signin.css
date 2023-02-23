@@ -1,0 +1,80 @@
+/*background colors*/
+body .container-fluid {
+  background: rgb(240, 237, 244);
+  background: linear-gradient(180deg, rgb(235, 215, 230) 0%, rgb(228, 235, 251) 50%, rgb(238, 241, 243) 100%);
+}
+body .container-fluid .content {
+  width: 80%;
+  margin: 100px auto;
+}
+body .container-fluid .content .sign-in {
+  height: 100%;
+}
+body .container-fluid .content .sign-in .sign-in-image {
+  display: flex;
+  justify-content: center;
+}
+body .container-fluid .content .sign-in .sign-in-image img {
+  width: 85%;
+  border-radius: 50px;
+}
+body .container-fluid .content .sign-in .sign-in-info .sign-in-info-title p {
+  font-size: 20px;
+  text-align: right;
+}
+body .container-fluid .content .sign-in .sign-in-info .sign-in-info-title span {
+  color: #66A9F1;
+}
+body .container-fluid .content .sign-in .sign-in-info .sign-in-info-form {
+  padding-top: 100px;
+}
+body .container-fluid .content .sign-in .sign-in-info .sign-in-info-form .form-caption {
+  text-align: center;
+  margin-bottom: 55px;
+}
+body .container-fluid .content .sign-in .sign-in-info .sign-in-info-form .form-caption h1 {
+  font-size: 50px;
+  font-weight: 600;
+}
+body .container-fluid .content .sign-in .sign-in-info .sign-in-info-form .form-caption p {
+  font-size: 24px;
+}
+body .container-fluid .content .sign-in .sign-in-info .sign-in-info-form form {
+  width: 62%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+body .container-fluid .content .sign-in .sign-in-info .sign-in-info-form form div.form-fields {
+  width: 100%;
+  margin-bottom: 10px;
+}
+body .container-fluid .content .sign-in .sign-in-info .sign-in-info-form form div.form-fields input {
+  width: 100%;
+  height: 65px;
+  padding: 10px 30px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  border: none;
+  font-size: 17px;
+  outline: none;
+}
+body .container-fluid .content .sign-in .sign-in-info .sign-in-info-form form div.form-password-recovery {
+  width: 100%;
+  margin-bottom: 35px;
+  font-size: 18px;
+}
+body .container-fluid .content .sign-in .sign-in-info .sign-in-info-form form div.form-password-recovery a {
+  display: block;
+  text-align: right;
+}
+body .container-fluid .content .sign-in .sign-in-info .sign-in-info-form form button {
+  width: 100%;
+  border: none;
+  color: #fff;
+  background: #FE6B68;
+  border-radius: 10px;
+  height: 65px;
+  font-size: 17px;
+  box-shadow: 20px 40px 60px 40px #ebd7e6;
+}
