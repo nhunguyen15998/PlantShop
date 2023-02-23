@@ -11,18 +11,18 @@ const browsersync = require('browser-sync').create();
 
 // Sass Task
 function scssTask(){
-  return src('wwwroot/scss/*.scss')
+  return src('wwwroot/scss/*.scss', { sourcemaps: true })
     .pipe(sass())
     //.pipe(postcss([cssnano()]))
     // .pipe(rename({ extname: '.min.js' }))
-    .pipe(dest('wwwroot/css'));
+    .pipe(dest('wwwroot/css', { sourcemaps: '.' }));
 }
-function bundleCss() {
-  return src('wwwroot/css/*.css')
-          .pipe(minifyCSS())
-          .pipe(concat('style.min.css'))
-         .pipe(dest('wwwroot/bundle'))
-}
+// function bundleCss() {
+//   return src('wwwroot/css/*.css', { sourcemaps: true })
+//           .pipe(minifyCSS())
+//           .pipe(concat('style.min.css'))
+//          .pipe(dest('wwwroot/bundle'))
+// }
 
 // JavaScript Task
 // function jsTask(){
@@ -53,7 +53,7 @@ function watchTask(){
           series(scssTask, 
                  //jsTask, 
                  browsersyncReload,
-                 bundleCss
+                 //bundleCss
                 ));
 }
 
@@ -63,5 +63,5 @@ exports.default = series(
   //jsTask,
   browsersyncServe,
   watchTask,
-  bundleCss
+  //bundleCss
 );
