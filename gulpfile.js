@@ -48,11 +48,11 @@ function browsersyncReload(cb){
 
 // Watch Task
 function watchTask(){
-  watch('*.html', browsersyncReload);
+  //watch('*.html', browsersyncReload);
   watch(['wwwroot/scss/*.scss', 'wwwroot/js/*.js'], 
           series(scssTask, 
                  //jsTask, 
-                 browsersyncReload,
+                 //browsersyncReload,
                  //bundleCss
                 ));
 }
@@ -61,7 +61,7 @@ function watchTask(){
 exports.default = series(
   scssTask,
   //jsTask,
-  browsersyncServe,
+  //browsersyncServe,
   watchTask,
   //bundleCss
 );
