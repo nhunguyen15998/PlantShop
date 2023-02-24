@@ -4,12 +4,13 @@ body {
     .container-fluid {
         background: rgb(240,237,244);
         background: $signinBackground;
+        min-height: 100vh;
         .content {
             width: 80%;
             margin: 100px auto;
-            .sign-in {
+            .sign-up, .sign-in {
                 height: 100%;
-                .sign-in-image {
+                .auth-image {
                     display: flex;
                     justify-content: center;
                     img {
@@ -17,17 +18,22 @@ body {
                         border-radius: 50px;
                     }
                 }
-                .sign-in-info {
-                    .sign-in-info-title {
+                @media (max-width: 1200px) {
+                    .auth-image {
+                        display: none;
+                    }
+                }
+                .auth-info {
+                    .auth-info-title {
                         p {
                             font-size: 20px;
                             text-align: right;
                         }
-                        span {
+                        span a {
                             color: #66A9F1;
                         }
                     }
-                    .sign-in-info-form {
+                    .auth-info-form {
                         padding-top: 100px;
                         .form-caption {
                             text-align: center;
@@ -77,6 +83,37 @@ body {
                                 height: 65px;
                                 font-size: 17px;
                                 box-shadow: 20px 40px 60px 40px #ebd7e6;
+                            }
+                        }
+                    }
+                    @media (max-width: 1200px) {
+                        .auth-info-form {
+                            padding-top: 50px;
+                            form {
+                                width: 80%;
+                            }
+                        }
+                    }
+                    @media (max-width: 576px) {
+                        .auth-info-title {
+                            p {
+                                font-size: 15px;
+                            }
+                        }
+                        .auth-info-form {
+                            .form-caption {
+                                h1 {
+                                    font-size: 40px;
+                                }
+                                p {
+                                    font-size: 15px;
+                                }
+                            }
+                            form {
+                                width: 100%;
+                                div.form-password-recovery {
+                                    font-size: 15px;
+                                }
                             }
                         }
                     }

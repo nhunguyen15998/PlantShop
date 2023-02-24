@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Sign In";
+}
+@section SignInStyle {
+    <link rel="stylesheet" href="~/css/authentication.css">
+}
+<div class="row sign-up">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 auth-image">
+        <img src="~/images/sign-in.jpg">
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 auth-info">
+        <div class="row">
+            <div class="col-md-12 auth-info-title">
+                <p>Already a member? <span><a href='@Url.ActionLink("SignIn", "Authentication")'>Sign in now!</a></span></p>
+            </div>
+            <div class="col-md-12 auth-info-form">
+                <div class="form-caption">
+                    <h1>Hello Newcomers!</h1>
+                    <p>We're glad you're here today</p>
+                </div>
+                <form>
+                    <div class="form-fields">
+                        <input type="text" placeholder="First Name" name="first_name" />
+                        <input type="text" placeholder="Last Name" name="last_name" />
+                        <input type="text" placeholder="Email" name="email" />
+                        <input type="text" placeholder="Phone" name="phone" />
+                        <input type="password" placeholder="Password" name="password" />
+                    </div>
+                    <div class="form-password-recovery">
+                        <a href="#">Recovery password</a>
+                    </div>
+                    <button>Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

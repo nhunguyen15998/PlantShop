@@ -2,18 +2,18 @@
     ViewData["Title"] = "Sign In";
 }
 @section SignInStyle {
-    <link rel="stylesheet" href="~/css/signin.css">
+    <link rel="stylesheet" href="~/css/authentication.css">
 }
 <div class="row sign-in">
-    <div class="col-md-6 col-6 sign-in-image">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 auth-image">
         <img src="~/images/sign-in.jpg">
     </div>
-    <div class="col-md-6 col-6 sign-in-info">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 auth-info">
         <div class="row">
-            <div class="col-md-12 sign-in-info-title">
-                <p>Not a member? <span>Register now!</span></p>
+            <div class="col-md-12 auth-info-title">
+                <p>Not a member? <span><a href='@Url.ActionLink("SignUp", "Authentication")'>Register now!</a></span></p>
             </div>
-            <div class="col-md-12 sign-in-info-form">
+            <div class="col-md-12 auth-info-form">
                 <div class="form-caption">
                     <h1>Hello Again!</h1>
                     <p>Welcome back you've been missed!</p>
@@ -21,7 +21,7 @@
                 <form>
                     <div class="form-fields">
                         <input type="text" placeholder="Phone" name="phone" />
-                        <input type="text" placeholder="Password" name="password" />
+                        <input type="password" placeholder="Password" name="password" />
                     </div>
                     <div class="form-password-recovery">
                         <a href="#">Recovery password</a>
