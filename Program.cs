@@ -1,7 +1,19 @@
+using Microsoft.EntityFrameworkCore;
+using MySql.EntityFrameworkCore.Extensions;
+using PlantShop.Context;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddEntityFrameworkMySQL().AddDbContext<PlantShopContext>(options => {
+    options.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+
+//startup
+var startup = new Startup(builder.Configuration);
+startup.ConfigurationServices(builder.Services);
 
 var app = builder.Build();
 

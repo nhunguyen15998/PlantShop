@@ -1,4 +1,5 @@
 @import "./variables.scss";
+@import "./mixin";
 
 body {
     .container-fluid {
@@ -10,6 +11,7 @@ body {
             margin: 100px auto;
             .sign-up, .sign-in {
                 height: 100%;
+                display: flex;
                 .auth-image {
                     display: flex;
                     justify-content: center;
@@ -47,22 +49,17 @@ body {
                             }
                         }
                         form {
-                            width: 62%;
                             margin: auto;
                             display: flex;
                             flex-direction: column;
                             div.form-fields {
                                 width: 100%;
                                 margin-bottom: 10px;
-                                input {
-                                    width: 100%;
-                                    height: 65px;
-                                    padding: 10px 30px;
-                                    margin-bottom: 25px;
-                                    border-radius: 10px;
-                                    border: none;
-                                    font-size: 17px;
-                                    outline: none;
+                                .col-lg-5 {
+                                    margin-bottom: 20px;
+                                }
+                                .field-control {
+                                    @include form-field-input
                                 }
                             }
                             div.form-password-recovery {
@@ -89,9 +86,12 @@ body {
                     @media (max-width: 1200px) {
                         .auth-info-form {
                             padding-top: 50px;
-                            form {
-                                width: 80%;
-                            }
+                        }
+                        .sign-in form {
+                            width: 80%;
+                        }
+                        .sign-up form {
+                            width: 90%;
                         }
                     }
                     @media (max-width: 576px) {
@@ -113,6 +113,32 @@ body {
                                 width: 100%;
                                 div.form-password-recovery {
                                     font-size: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .sign-in form {
+                width: 62%;
+                .field-control {
+                    width: 100%;
+                }
+            }
+            .sign-up form {
+                width: 75%;
+                div.form-fields {
+                    .row {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                    @media (max-width: 1600px) {
+                        .row {
+                            display: block;
+                            .col-lg-5 {
+                                width: 100%;
+                                .field-control {
+                                    width: 100%;
                                 }
                             }
                         }
