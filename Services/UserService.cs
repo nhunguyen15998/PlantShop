@@ -9,12 +9,18 @@ namespace PlantShop.Services
         public List<UserModel>? getUsers();
         //get user by id
         public UserModel? getUserById(int id);
+        //get user by phone
+        public UserModel? getUserByPhone(string phone);
         //create
         public int createUser(UserModel user);
         //update
         public bool updateUser(UserModel user);
         //delete
         public bool deleteUser(int id);
+        //check unique phone 
+        public bool checkUniqueUserPhone(string phone);
+        //check valid login password
+        public bool verifyPassword(string password);
     }
 
     public class UserService : IUserService
@@ -24,6 +30,11 @@ namespace PlantShop.Services
         public UserService(PlantShopContext context)
         {
             _context = context;
+        }
+
+        public bool checkUniqueUserPhone(string phone)
+        {
+            throw new NotImplementedException();
         }
 
         public int createUser(UserModel user)
@@ -79,6 +90,19 @@ namespace PlantShop.Services
             }
         }
 
+        public UserModel? getUserByPhone(string phone)
+        {
+            try
+            {
+                return _context.User.FirstOrDefault(x => x.Phone == phone) ?? null;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
         public List<UserModel>? getUsers()
         {
             try
@@ -107,6 +131,11 @@ namespace PlantShop.Services
                 Console.WriteLine(e);
                 throw;
             }
+        }
+
+        public bool verifyPassword(string password)
+        {
+            throw new NotImplementedException();
         }
     }
 }
