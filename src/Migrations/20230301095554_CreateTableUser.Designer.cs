@@ -11,7 +11,7 @@ using PlantShop.Context;
 namespace PlantShop.Migrations
 {
     [DbContext(typeof(PlantShopContext))]
-    [Migration("20230228052919_CreateTableUser")]
+    [Migration("20230301095554_CreateTableUser")]
     partial class CreateTableUser
     {
         /// <inheritdoc />

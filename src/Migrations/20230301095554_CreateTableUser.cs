@@ -26,7 +26,7 @@ namespace PlantShop.Migrations
                     email = table.Column<string>(type: "longtext", nullable: true),
                     phone = table.Column<string>(type: "longtext", nullable: true),
                     hash_password = table.Column<string>(type: "longtext", nullable: true),
-                    avatar = table.Column<string>(type: "longtext", nullable: true, defaultValue: "/images/default-user.png"),
+                    avatar = table.Column<string>(type: "longtext", nullable: true),
                     status = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
                     created_at = table.Column<DateTime>(type: "datetime(6)", nullable: true)
                 },
