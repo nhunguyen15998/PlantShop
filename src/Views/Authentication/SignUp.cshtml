@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "Sign In";
+}
+@section SignInStyle {
+    <link rel="stylesheet" href="~/css/authentication.css">
+}
+@model PlantShop.FormValidations.RegisterForm
+<div class="row sign-up">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 auth-image">
+        <img src="~/images/sign-in.jpg">
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 auth-info">
+        <div class="row">
+            <div class="col-md-12 auth-info-title">
+                <p>Already a member? <span><a href='@Url.ActionLink("SignIn", "Authentication")'>Sign in now!</a></span></p>
+            </div>
+            <div class="col-md-12 auth-info-form">
+                <div class="form-caption">
+                    <h1>Hello Newcomers!</h1>
+                    <p>We're glad you're here today</p>
+                </div>
+                <form method="post" asp-controller="Authentication" asp-action="SignUpAction">
+                    @if(TempData["Error"] != null){
+                        <div class="alert alert-danger" role="alert">@TempData["Error"]</div>
+                    }
+                    <div class="form-fields">
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-6">
+                                <input asp-for="FirstName" class="field-control" type="text" placeholder="First Name" />
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <input asp-for="LastName" class="field-control" type="text" placeholder="Last Name" />
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-6">
+                                <input asp-for="Email" class="field-control" type="text" placeholder="Email" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <input asp-for="Phone" class="field-control" type="text" placeholder="Phone" />
+                                <span asp-validation-for="Phone" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-6">
+                                <input asp-for="Password" class="field-control" type="password" placeholder="Password" />
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <input asp-for="RepeatPassword" class="field-control" type="password" placeholder="Confirm Password" />
+                                <span asp-validation-for="RepeatPassword" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-password-recovery">
+                        <a href="#">Recovery password</a>
+                    </div>
+                    <button>Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
