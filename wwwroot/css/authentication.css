@@ -55,7 +55,7 @@ body .container-fluid .content .sign-up .auth-info .auth-info-form form div.form
   width: 100%;
   margin-bottom: 10px;
 }
-body .container-fluid .content .sign-up .auth-info .auth-info-form form div.form-fields .col-lg-5, body .container-fluid .content .sign-in .auth-info .auth-info-form form div.form-fields .col-lg-5 {
+body .container-fluid .content .sign-up .auth-info .auth-info-form form div.form-fields .col-lg-6, body .container-fluid .content .sign-up .auth-info .auth-info-form form div.form-fields .col-lg-12, body .container-fluid .content .sign-in .auth-info .auth-info-form form div.form-fields .col-lg-6, body .container-fluid .content .sign-in .auth-info .auth-info-form form div.form-fields .col-lg-12 {
   margin-bottom: 20px;
 }
 body .container-fluid .content .sign-up .auth-info .auth-info-form form div.form-fields .field-control, body .container-fluid .content .sign-in .auth-info .auth-info-form form div.form-fields .field-control {
@@ -123,18 +123,14 @@ body .container-fluid .content .sign-in form .field-control {
 body .container-fluid .content .sign-up form {
   width: 75%;
 }
-body .container-fluid .content .sign-up form div.form-fields .row {
-  display: flex;
-  justify-content: space-between;
-}
 @media (max-width: 1600px) {
   body .container-fluid .content .sign-up form div.form-fields .row {
     display: block;
   }
-  body .container-fluid .content .sign-up form div.form-fields .row .col-lg-5 {
+  body .container-fluid .content .sign-up form div.form-fields .row .col-lg-6 {
     width: 100%;
   }
-  body .container-fluid .content .sign-up form div.form-fields .row .col-lg-5 .field-control {
+  body .container-fluid .content .sign-up form div.form-fields .row .col-lg-6 .field-control {
     width: 100%;
   }
 }

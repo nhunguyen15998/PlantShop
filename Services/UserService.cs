@@ -1,4 +1,6 @@
+using Microsoft.EntityFrameworkCore;
 using PlantShop.Context;
+using PlantShop.FormValidations;
 using PlantShop.Models;
 
 namespace PlantShop.Services 
@@ -6,21 +8,21 @@ namespace PlantShop.Services
     public interface IUserService
     {
         //get list
-        public List<UserModel>? getUsers();
+        public List<UserModel>? GetUsers();
         //get user by id
-        public UserModel? getUserById(int id);
-        //get user by phone
-        public UserModel? getUserByPhone(string phone);
+        public UserModel? GetUserById(int id);
         //create
-        public int createUser(UserModel user);
+        public bool Register(RegisterForm user);
         //update
-        public bool updateUser(UserModel user);
+        public bool UpdateUser(UserModel user);
         //delete
-        public bool deleteUser(int id);
-        //check unique phone 
-        public bool checkUniqueUserPhone(string phone);
+        public bool DeleteUser(int id);
+        //login
+        public UserModel? VerifyUser(SignInForm user);
+        //check existing phone 
+        public UserModel? CheckExistingUserPhone(string? phone);
         //check valid login password
-        public bool verifyPassword(string password);
+        public bool VerifyPassword(string password, string? hashPassword);
     }
 
     public class UserService : IUserService
@@ -32,38 +34,24 @@ namespace PlantShop.Services
             _context = context;
         }
 
-        public bool checkUniqueUserPhone(string phone)
+        public UserModel? CheckExistingUserPhone(string? phone)
         {
-            throw new NotImplementedException();
+            return _context.User.FirstOrDefault(x => x.Phone == phone) ?? null;
         }
 
-        public int createUser(UserModel user)
+        public bool Register(RegisterForm user)
         {
             var transaction = _context.Database.BeginTransaction();
             try
             {
-                _context.User.Add(user);
-                _context.SaveChanges();
+                UserModel created = new UserModel();
+                created.FirstName = user.FirstName;
+                created.LastName = user.LastName;
+                created.Email = user.Email;
+                created.Phone = user.Phone;
+                created.HashPassword = BCrypt.Net.BCrypt.HashPassword(user.Password);
 
-                transaction.Commit();
-                return user.Id;
-            }
-            catch (Exception e)
-            {
-                transaction.Rollback();
-                Console.WriteLine(e);
-                throw;
-            }
-        }
-
-        public bool deleteUser(int id)
-        {
-            var transaction = _context.Database.BeginTransaction();
-            try
-            {
-                UserModel? dbUser = _context.User.FirstOrDefault(x => x.Id == id);
-                if(dbUser == null) return false;
-                _context.User.Remove(dbUser);
+                _context.User.Add(created);
                 _context.SaveChanges();
 
                 transaction.Commit();
@@ -77,51 +65,16 @@ namespace PlantShop.Services
             }
         }
 
-        public UserModel? getUserById(int id)
-        {
-            try
-            {
-                return _context.User.FirstOrDefault(x => x.Id == id) ?? null;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
-        }
-
-        public UserModel? getUserByPhone(string phone)
-        {
-            try
-            {
-                return _context.User.FirstOrDefault(x => x.Phone == phone) ?? null;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
-        }
-
-        public List<UserModel>? getUsers()
-        {
-            try
-            {
-               return _context.User.ToList() ?? null;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
-        }
-
-        public bool updateUser(UserModel user)
+        public bool DeleteUser(int id)
         {
             var transaction = _context.Database.BeginTransaction();
             try
             {
-                
+                UserModel? existingUser = _context.User.FirstOrDefault(x => x.Id == id);
+                if(existingUser == null) return false;
+                _context.User.Remove(existingUser);
+                _context.SaveChanges();
+
                 transaction.Commit();
                 return true;
             }
@@ -133,9 +86,60 @@ namespace PlantShop.Services
             }
         }
 
-        public bool verifyPassword(string password)
+        public UserModel? GetUserById(int id)
         {
-            throw new NotImplementedException();
+            return _context.User.FirstOrDefault(x => x.Id == id) ?? null;
+        }
+
+        public List<UserModel>? GetUsers()
+        {
+            return _context.User.ToList() ?? null;
+        }
+
+        public UserModel? VerifyUser(SignInForm user)
+        {
+            try
+            {
+                //check phone
+                UserModel? existingUser = this.CheckExistingUserPhone(user.Phone);
+                if(existingUser == null) return null;
+                //check password
+                bool isValidPassword = this.VerifyPassword(user.Password, existingUser.HashPassword);
+                if(!isValidPassword) return null;
+                return existingUser;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+        public bool UpdateUser(UserModel user)
+        {
+            var transaction = _context.Database.BeginTransaction();
+            try
+            {
+                UserModel? existingUser = _context.User.FirstOrDefault(x => x.Id == user.Id);
+                if(existingUser == null) return false;
+                _context.Entry<UserModel>(existingUser).CurrentValues.SetValues(user); 
+                _context.Entry<UserModel>(existingUser).State = EntityState.Modified;
+                _context.SaveChanges();
+
+                transaction.Commit();
+                return true;
+            }
+            catch (Exception e)
+            {
+                transaction.Rollback();
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+        public bool VerifyPassword(string password, string? hashPassword)
+        {
+            return BCrypt.Net.BCrypt.Verify(password, hashPassword);
         }
     }
 }

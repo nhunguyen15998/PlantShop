@@ -11,6 +11,15 @@ builder.Services.AddEntityFrameworkMySQL().AddDbContext<PlantShopContext>(option
     options.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
+builder.Services.AddDistributedMemoryCache();
+
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromSeconds(10);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
 //startup
 var startup = new Startup(builder.Configuration);
 startup.ConfigurationServices(builder.Services);
@@ -31,6 +40,8 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",

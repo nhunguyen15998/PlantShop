@@ -55,7 +55,7 @@ body {
                             div.form-fields {
                                 width: 100%;
                                 margin-bottom: 10px;
-                                .col-lg-5 {
+                                .col-lg-6, .col-lg-12 {
                                     margin-bottom: 20px;
                                 }
                                 .field-control {
@@ -128,14 +128,10 @@ body {
             .sign-up form {
                 width: 75%;
                 div.form-fields {
-                    .row {
-                        display: flex;
-                        justify-content: space-between;
-                    }
                     @media (max-width: 1600px) {
                         .row {
                             display: block;
-                            .col-lg-5 {
+                            .col-lg-6 {
                                 width: 100%;
                                 .field-control {
                                     width: 100%;

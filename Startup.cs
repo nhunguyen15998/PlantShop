@@ -11,6 +11,8 @@ public class Startup
 
     public void ConfigurationServices(IServiceCollection services)
     {
+        services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+        
         services.AddScoped<IUserService, UserService>();
     }
 

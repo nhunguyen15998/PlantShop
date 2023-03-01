@@ -19,6 +19,7 @@ namespace PlantShop.FormValidations
         [Required(ErrorMessage = "Password is required")]
         public string Password { get; set; }
         [Required(ErrorMessage = "Repeat password is required")]
+        [Compare("Password", ErrorMessage ="Passwords must match.")]
         public string RepeatPassword { get; set; }
     }
 }
