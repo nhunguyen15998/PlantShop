@@ -10,13 +10,13 @@ namespace PlantShop.Services
         //get list
         public List<UserModel>? GetUsers();
         //get user by id
-        public UserModel? GetUserById(int id);
+        // public UserModel? GetUserById(int id);
         //create
         public bool Register(RegisterForm user);
         //update
         public bool UpdateUser(UserModel user);
         //delete
-        public bool DeleteUser(int id);
+        // public bool DeleteUser(int id);
         //login
         public UserModel? VerifyUser(SignInForm user);
         //check existing phone 
@@ -27,9 +27,9 @@ namespace PlantShop.Services
 
     public class UserService : IUserService
     {
-        private PlantShopContext _context;
+        private PlantShopIdentityDbContext _context;
 
-        public UserService(PlantShopContext context)
+        public UserService(PlantShopIdentityDbContext context)
         {
             _context = context;
         }
@@ -65,31 +65,31 @@ namespace PlantShop.Services
             }
         }
 
-        public bool DeleteUser(int id)
-        {
-            var transaction = _context.Database.BeginTransaction();
-            try
-            {
-                UserModel? existingUser = _context.User.FirstOrDefault(x => x.Id == id);
-                if(existingUser == null) return false;
-                _context.User.Remove(existingUser);
-                _context.SaveChanges();
+        // public bool DeleteUser(int id)
+        // {
+        //     var transaction = _context.Database.BeginTransaction();
+        //     try
+        //     {
+        //         UserModel? existingUser = _context.User.FirstOrDefault(x => x.Id == id);
+        //         if(existingUser == null) return false;
+        //         _context.User.Remove(existingUser);
+        //         _context.SaveChanges();
 
-                transaction.Commit();
-                return true;
-            }
-            catch (Exception e)
-            {
-                transaction.Rollback();
-                Console.WriteLine(e);
-                throw;
-            }
-        }
+        //         transaction.Commit();
+        //         return true;
+        //     }
+        //     catch (Exception e)
+        //     {
+        //         transaction.Rollback();
+        //         Console.WriteLine(e);
+        //         throw;
+        //     }
+        // }
 
-        public UserModel? GetUserById(int id)
-        {
-            return _context.User.FirstOrDefault(x => x.Id == id) ?? null;
-        }
+        // public UserModel? GetUserById(int id)
+        // {
+        //     return _context.User.FirstOrDefault(x => x.Id == id) ?? null;
+        // }
 
         public List<UserModel>? GetUsers()
         {

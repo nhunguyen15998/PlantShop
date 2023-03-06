@@ -7,7 +7,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddEntityFrameworkMySQL().AddDbContext<PlantShopContext>(options => {
+// builder.Services.AddEntityFrameworkMySQL().AddDbContext<PlantShopContext>(options => {
+//     options.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection"));
+// });
+
+builder.Services.AddEntityFrameworkMySQL().AddDbContext<PlantShopIdentityDbContext>(options => {
     options.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 

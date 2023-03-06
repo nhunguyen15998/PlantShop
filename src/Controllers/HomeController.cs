@@ -1,16 +1,17 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using PlantShop.Models;
+using PlantShop.Services;
 
 namespace PlantShop.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    IUserService _userService;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(IUserService userService)
     {
-        _logger = logger;
+        _userService = userService;
     }
 
     public IActionResult Index()
