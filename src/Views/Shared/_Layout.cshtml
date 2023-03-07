@@ -40,7 +40,8 @@
     <div class="container-fluid">
         @if (ViewData["Title"]?.ToString() != "Sign In") {
             <div class="header-area">
-                @await Html.PartialAsync("~/Views/Shared/Partials/_Header.cshtml")
+                @* @await Html.PartialAsync("~/Views/Shared/Partials/_Header.cshtml") *@
+                @await Html.PartialAsync("_LoginPartial")
                 <div class="header-background-gradient"></div>
             </div>
         }
