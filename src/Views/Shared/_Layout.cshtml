@@ -40,8 +40,7 @@
     <div class="container-fluid">
         @if (ViewData["Title"]?.ToString() != "Sign In") {
             <div class="header-area">
-                @* @await Html.PartialAsync("~/Views/Shared/Partials/_Header.cshtml") *@
-                @await Html.PartialAsync("_LoginPartial")
+                @await Html.PartialAsync("~/Views/Shared/Partials/_Header.cshtml")
                 <div class="header-background-gradient"></div>
             </div>
         }
@@ -56,6 +55,7 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false) *@
+    @RenderSection("Scripts", required: false)
 </body>
 
 </html>

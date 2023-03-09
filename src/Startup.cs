@@ -2,6 +2,7 @@ using PlantShop.Services;
 using Microsoft.AspNetCore.Identity;
 using PlantShop.Context;
 using Microsoft.AspNetCore.Identity.UI.Services;
+using PlantShop.Models;
 
 public class Startup
 {   
@@ -15,9 +16,12 @@ public class Startup
     public void ConfigurationServices(IServiceCollection services)
     {
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-
-        services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
-                .AddEntityFrameworkStores<PlantShopIdentityDbContext>();
+        // services.AddRazorPages();
+        // services.AddDefaultIdentity<UserModel>(options => options.SignIn.RequireConfirmedAccount = false)
+        //         .AddEntityFrameworkStores<PlantShopIdentityDbContext>();
+        services.AddIdentity<UserModel, IdentityRole>()
+                .AddEntityFrameworkStores<PlantShopIdentityDbContext>()
+                .AddDefaultTokenProviders();
 
         //IdentityOptions
         services.Configure<IdentityOptions> (options => {
@@ -71,12 +75,12 @@ public class Startup
         app.UseAuthentication();
         app.UseAuthorization();
 
-        app.UseEndpoints(endpoints => {
-            endpoints.MapRazorPages();
-        });
-
-        app.UseEndpoints(endpoints => {
-            endpoints.MapControllers();
-        });
+        // app.UseEndpoints(endpoints =>
+        // {
+        //     endpoints.MapControllerRoute(
+        //         name: "default",
+        //         pattern: "{controller=Home}/{action=Index}/{id?}");
+        //     endpoints.MapRazorPages();
+        // });
     }
 }
