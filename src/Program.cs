@@ -1,7 +1,33 @@
+using Microsoft.EntityFrameworkCore;
+using MySql.EntityFrameworkCore.Extensions;
+using PlantShop.Context;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+// builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
+
+// builder.Services.AddEntityFrameworkMySQL().AddDbContext<PlantShopContext>(options => {
+//     options.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection"));
+// });
+
+builder.Services.AddEntityFrameworkMySQL().AddDbContext<PlantShopIdentityDbContext>(options => {
+    options.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+
+builder.Services.AddDistributedMemoryCache();
+
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromSeconds(10);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
+//startup
+var startup = new Startup(builder.Configuration);
+startup.ConfigurationServices(builder.Services);
 
 var app = builder.Build();
 
@@ -20,8 +46,14 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.UseSession();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}");
+    endpoints.MapRazorPages();
+});
 
 app.Run();

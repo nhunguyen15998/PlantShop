@@ -478,3 +478,6 @@ $RECYCLE.BIN/
 
 #.map
 wwwroot/css/*.css.map
+
+bin
+obj

@@ -1,0 +1,67 @@
+﻿@page "/register/{id}"
+@model RegisterModel
+@{
+    ViewData["Title"] = "Sign Up";
+}
+<div class="row sign-up">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 auth-image">
+        <img src="~/images/sign-in.jpg">
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 auth-info">
+        <div class="row">
+            <div class="col-md-12 auth-info-title">
+                <p>Already a member? <span><a asp-area="Identity" asp-page="/Account/Login">Sign in now!</a></span></p>
+            </div>
+            <div class="col-md-12 auth-info-form">
+                <div class="form-caption">
+                    <h1>Hello Newcomers!</h1>
+                    <p>We're glad you're here today</p>
+                </div>
+                <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                    
+                    <div class="form-fields">
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-6">
+                                <input asp-for="Input.FirstName" class="field-control" type="text" placeholder="First Name" />                                
+                                <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <input asp-for="Input.LastName" class="field-control" type="text" placeholder="Last Name" />
+                                <span asp-validation-for="Input.LastName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-6">
+                                <input asp-for="Input.Email" class="field-control" type="text" placeholder="Email" />
+                                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <input asp-for="Input.Phone" class="field-control" type="text" placeholder="Phone" />
+                                <span asp-validation-for="Input.Phone" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-6">
+                                <input asp-for="Input.Password" class="field-control" type="password" placeholder="Password" />
+                                <span asp-validation-for="Input.Password" class="text-danger"></span>
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <input asp-for="Input.RepeatPassword" class="field-control" type="password" placeholder="Confirm Password" />
+                                <span asp-validation-for="Input.RepeatPassword" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-password-recovery">
+                        <a href="#">Recovery password</a>
+                    </div>
+                    <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

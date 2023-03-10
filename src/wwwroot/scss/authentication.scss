@@ -1,0 +1,146 @@
+@import "./variables.scss";
+@import "./mixin";
+
+body {
+    .container-fluid {
+        background: rgb(240,237,244);
+        background: $signinBackground;
+        min-height: 100vh;
+        .content {
+            width: 80%;
+            margin: 100px auto;
+            .sign-up, .sign-in {
+                height: 100%;
+                display: flex;
+                .auth-image {
+                    display: flex;
+                    justify-content: center;
+                    img {
+                        width: 85%;
+                        border-radius: 50px;
+                    }
+                }
+                @media (max-width: 1200px) {
+                    .auth-image {
+                        display: none;
+                    }
+                }
+                .auth-info {
+                    .auth-info-title {
+                        p {
+                            font-size: 20px;
+                            text-align: right;
+                        }
+                        span a {
+                            color: #66A9F1;
+                        }
+                    }
+                    .auth-info-form {
+                        padding-top: 100px;
+                        .form-caption {
+                            text-align: center;
+                            margin-bottom: 55px;
+                            h1 {
+                                font-size: 50px;
+                                font-weight: 600;
+                            }
+                            p {
+                                font-size: 24px;
+                            }
+                        }
+                        form {
+                            margin: auto;
+                            display: flex;
+                            flex-direction: column;
+                            div.form-fields {
+                                width: 100%;
+                                margin-bottom: 10px;
+                                .col-lg-6, .col-lg-12 {
+                                    margin-bottom: 20px;
+                                }
+                                .field-control {
+                                    @include form-field-input
+                                }
+                            }
+                            div.form-password-recovery {
+                                width: 100%;
+                                margin-bottom: 35px;
+                                font-size: 18px;
+                                a {
+                                    display: block;
+                                    text-align: right;
+                                }
+                            }
+                            button {
+                                width: 100%;
+                                border: none;
+                                color: #fff;
+                                background: #FE6B68;
+                                border-radius: 10px;
+                                height: 65px;
+                                font-size: 17px;
+                                box-shadow: 20px 40px 60px 40px #ebd7e6;
+                            }
+                        }
+                    }
+                    @media (max-width: 1200px) {
+                        .auth-info-form {
+                            padding-top: 50px;
+                        }
+                        .sign-in form {
+                            width: 80%;
+                        }
+                        .sign-up form {
+                            width: 90%;
+                        }
+                    }
+                    @media (max-width: 576px) {
+                        .auth-info-title {
+                            p {
+                                font-size: 15px;
+                            }
+                        }
+                        .auth-info-form {
+                            .form-caption {
+                                h1 {
+                                    font-size: 40px;
+                                }
+                                p {
+                                    font-size: 15px;
+                                }
+                            }
+                            form {
+                                width: 100%;
+                                div.form-password-recovery {
+                                    font-size: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .sign-in form {
+                width: 62%;
+                .field-control {
+                    width: 100%;
+                }
+            }
+            .sign-up form {
+                width: 75%;
+                div.form-fields {
+                    @media (max-width: 1600px) {
+                        .row {
+                            display: block;
+                            .col-lg-6 {
+                                width: 100%;
+                                .field-control {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
