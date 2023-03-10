@@ -19,7 +19,7 @@ public class Startup
         // services.AddRazorPages();
         // services.AddDefaultIdentity<UserModel>(options => options.SignIn.RequireConfirmedAccount = false)
         //         .AddEntityFrameworkStores<PlantShopIdentityDbContext>();
-        services.AddIdentity<UserModel, IdentityRole>()
+        services.AddIdentity<UserModel, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<PlantShopIdentityDbContext>()
                 .AddDefaultTokenProviders();
 
@@ -50,9 +50,9 @@ public class Startup
         });
 
         //mail
-        services.AddOptions ();                                        
+        services.AddOptions();                                        
         var mailsettings = _Configuration.GetSection("MailSettings");  
-        services.Configure<SendMailService>(mailsettings);              
+        services.Configure<MailSettings>(mailsettings);     
         services.AddTransient<IEmailSender, SendMailService>();  
 
         services.AddScoped<IUserService, UserService>();

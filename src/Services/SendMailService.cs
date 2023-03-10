@@ -33,6 +33,8 @@ namespace PlantShop.Services
         public async Task SendEmailAsync(string email, string subject, string htmlMessage) 
         {
             var message = new MimeMessage();
+            var a = mailSettings.Mail;
+            var b = mailSettings.DisplayName;
             message.Sender = new MailboxAddress(mailSettings.DisplayName, mailSettings.Mail);
             message.From.Add(new MailboxAddress(mailSettings.DisplayName, mailSettings.Mail));
             message.To.Add(MailboxAddress.Parse(email));
@@ -54,7 +56,7 @@ namespace PlantShop.Services
                 var emailsavefile = string.Format(@"mailssave/{0}.eml", Guid.NewGuid());
                 await message.WriteToAsync (emailsavefile);
 
-                logger.LogInformation("Lỗi gửi mail, lưu tại - " + emailsavefile);
+                logger.LogInformation("Mail sending error at - " + emailsavefile);
                 logger.LogError(ex.Message);
             }
 

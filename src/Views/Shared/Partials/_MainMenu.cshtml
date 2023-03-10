@@ -65,14 +65,14 @@
                     <li><a href="#">Shop</a></li>
                     <li><a href="#">About Us</a></li>
                     <li><a href="#">Contact</a></li>
-                    @if (phone != null)
+                    @* @if (phone != null)
                     {
                         <li><a href="#"><span class="icon-location-arrow mr-3"></span>@user</a></li>
                     }
                     else
                     {
                         <li><a href='@Url.ActionLink("SignIn", "Authentication")'>Log In/Register</a></li>
-                    }
+                    } *@
                 </ul>
                 @await Html.PartialAsync("../_LoginPartial.cshtml")
             </div>

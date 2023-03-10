@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@(ViewData["Title"] ?? "Home")</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,700;1,300;1,600&display=swap"
@@ -30,15 +31,16 @@
     <link rel="stylesheet" type="text/css" href="~/css/index.css">
     <link rel="stylesheet" href="~/css/sidebar.css">
     <script src="~/js/sidebar.js"></script>
-    @if (ViewData["Title"]?.ToString() == "Sign In")
+    
+    @if (ViewData["Title"]?.ToString() == "Sign In" || ViewData["Title"]?.ToString() == "Sign Up") 
     {
-        RenderSection("SignInStyle");
+        <link rel="stylesheet" href="/css/authentication.css">
     }
 </head>
 
 <body>
     <div class="container-fluid">
-        @if (ViewData["Title"]?.ToString() != "Sign In") {
+        @if (ViewData["Title"]?.ToString() != "Sign In" && ViewData["Title"]?.ToString() != "Sign Up") {
             <div class="header-area">
                 @await Html.PartialAsync("~/Views/Shared/Partials/_Header.cshtml")
                 <div class="header-background-gradient"></div>
@@ -48,7 +50,7 @@
             @RenderBody()
         </div>
     </div>
-    @if (ViewData["Title"]?.ToString() != "Sign In") {
+    @if (ViewData["Title"]?.ToString() != "Sign In" && ViewData["Title"]?.ToString() != "Sign Up") {
         @await Html.PartialAsync("~/Views/Shared/Partials/_Footer.cshtml")
     }
     @* <script src="~/lib/jquery/dist/jquery.min.js"></script>
