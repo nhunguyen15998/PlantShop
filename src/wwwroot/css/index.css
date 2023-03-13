@@ -43,8 +43,10 @@ body .container-fluid .header-area header .navigation-bar .nav a {
 body .container-fluid .header-area header .navigation-bar .nav > li {
   min-width: 150px;
 }
-body .container-fluid .header-area header .navigation-bar .nav .active a, body .container-fluid .header-area header .navigation-bar .nav > li > a:focus, body .container-fluid .header-area header .navigation-bar .nav > li > a:hover {
-  background-clip: -webkit-linear-gradient(left, #2AF598, #009EFD 100%);
+body .container-fluid .header-area header .navigation-bar .nav .active a.parent-node, body .container-fluid .header-area header .navigation-bar .nav > li > a.parent-node:focus, body .container-fluid .header-area header .navigation-bar .nav > li > a.parent-node:hover {
+  background: -webkit-linear-gradient(left, #2AF598, #009EFD 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: 700;
 }
 body .container-fluid .header-area header .navigation-bar .shopping-bag {
@@ -83,6 +85,72 @@ body .container-fluid .header-area header .navigation-bar .navbar-header {
   body .container-fluid .header-area header .navigation-bar .navbar .navbar-nav > li {
     float: none;
     display: inline-block;
+    position: relative;
+  }
+  body .container-fluid .header-area header .navigation-bar .navbar .navbar-nav > li .menu-items {
+    position: absolute;
+    top: 100%;
+    left: -32px;
+    display: block;
+    width: auto;
+  }
+  body .container-fluid .header-area header .navigation-bar .navbar .navbar-nav > li .menu-items .submenu-inner {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+  }
+  body .container-fluid .header-area header .navigation-bar .navbar .navbar-nav > li .menu-items .submenu-inner ul.submenu {
+    position: relative;
+    top: auto;
+    opacity: 1;
+    visibility: visible;
+    left: 0;
+    width: 200px;
+    margin: 0;
+    padding: 15px 0;
+    background-color: #222121;
+    list-style: none;
+  }
+  body .container-fluid .header-area header .navigation-bar .navbar .navbar-nav > li .menu-items .submenu-inner ul.submenu li.menu-item {
+    padding: 0 8px 0 32px;
+    position: relative;
+    margin: 0;
+    background: 0 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+  }
+  body .container-fluid .header-area header .navigation-bar .navbar .navbar-nav > li .menu-items .submenu-inner ul.submenu li.menu-item a {
+    position: relative;
+    display: flex;
+    white-space: normal;
+    margin: 0;
+    overflow: hidden;
+    transition: padding 0.2s ease-out;
+    padding-right: 15px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px;
+    line-height: 1.6em;
+    font-weight: 400;
+    color: #f7f7f7;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  body .container-fluid .header-area header .navigation-bar .navbar .navbar-nav > li .menu-items-hidden {
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: 10;
+  }
+  body .container-fluid .header-area header .navigation-bar .navbar .navbar-nav > li .menu-items-shown {
+    visibility: visible;
+    height: 200px;
+    opacity: 1;
+    overflow: visible;
+    z-index: 20;
+    transition: opacity 0.2s ease-out;
   }
   body .container-fluid .header-area header .navigation-bar .navbar .navbar-nav > li li {
     text-align: left;

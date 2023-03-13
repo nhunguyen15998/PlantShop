@@ -1,0 +1,357 @@
+.container {
+    width: 70%;
+}
+#qodef-page-outer {
+    .qodef-page-title {
+        height: 97px;
+        background-position: center 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: inline-block;
+        width: 100%;
+        vertical-align: top;
+        background-color: #fff;
+        .qodef-m-inner {
+            display: inline-block;
+            width: 100%;
+            vertical-align: top;
+            height: 100%;
+        }
+        .qodef-m-content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .qodef-breadcrumbs a {
+            color: #a5a5a5;
+            font-size: 15px;
+        }
+        .qodef-breadcrumbs {
+            .qodef-breadcrumbs-separator {
+                margin: 0 5px;
+                ::after {
+                    content: '/';
+                }
+            }
+            span.qodef-breadcrumbs-current {
+                color: #797979;
+            }
+        }
+    }
+    .elementor {
+        -webkit-hyphens: manual;
+        -ms-hyphens: manual;
+        hyphens: manual;
+        box-sizing: border-box;
+        img {
+            height: auto;
+            max-width: 100%;
+            border: none;
+            border-radius: 0;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+        .elementor-element {
+            --widgets-spacing: 20px;
+            .elementor-section {
+                margin-top: 0px;
+                margin-bottom: 0px;
+                padding: 0px 0px 0px 0px;
+                .elementor-container {
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    margin-right: auto;
+                    margin-left: auto;
+                    .elementor-column, .elementor-column-wrap {
+                        display: -webkit-box;
+                        display: -ms-flexbox;
+                        display: flex;
+                    }
+                    .elementor-column {
+                        min-height: 1px;
+                        .elementor-element-populated {
+                            margin: 0px 0px 0px 0px;
+                            --e-column-margin-right: 0px;
+                            --e-column-margin-left: 0px;
+                            padding: 0px 0px 0px 0px;
+                        }
+                        .elementor-widget-wrap {
+                            position: relative;
+                            width: 100%;
+                            -ms-flex-wrap: wrap;
+                            flex-wrap: wrap;
+                            -ms-flex-line-pack: start;
+                            align-content: flex-start;
+                            >.elementor-element {
+                                width: 100%;
+                                position: relative;
+                            }
+                        }
+                    }
+                    @media (min-width: 768px) {
+                        .elementor-column.elementor-col-100, .elementor-column[data-col="100"] {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            .elementor-widget-container {
+                -webkit-transition: background .3s,border .3s,border-radius .3s,-webkit-box-shadow .3s;
+                transition: background .3s,border .3s,border-radius .3s,-webkit-box-shadow .3s;
+                -o-transition: background .3s,border .3s,border-radius .3s,box-shadow .3s;
+                transition: background .3s,border .3s,border-radius .3s,box-shadow .3s;
+                transition: background .3s,border .3s,border-radius .3s,box-shadow .3s,-webkit-box-shadow .3s;
+                .qodef-gutter--large.qodef--no-bottom-space {
+                    margin-bottom: -50px;
+                    position: relative;
+                    display: inline-block;
+                    width: 100%;
+                    vertical-align: top;
+                    .qodef-grid-inner {
+                        visibility: visible;
+                        margin: 0 -25px;
+                        ::before {
+                            content: '';
+                            display: table;
+                            table-layout: fixed;
+                        }
+                        .qodef-grid-masonry-sizer {
+                            width: 33.33333%;
+                            padding: 0;
+                            margin: 0;
+                        }
+                        .qodef-grid-masonry-gutter {
+                            width: 0;
+                            padding: 0;
+                            margin: 0;
+                        }
+                        article.qodef-grid-item {
+                            width: 33.33333%;
+                            padding: 0 25px;
+                            margin: 0 0 50px;
+                            display: inline-block;
+                            vertical-align: top;
+                            min-height: 1px;
+                            float: left;
+                            .qodef-e-inner {
+                                position: relative;
+                                display: inline-block;
+                                width: 100%;
+                                vertical-align: top;
+                                .entry-date {
+                                    padding: 7px 16px;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    z-index: 10;
+                                    background-color: #000;
+                                    color: #fff;
+                                    text-align: center;
+                                    display: inline-flex;
+                                    flex-direction: column;
+                                    font-size: 18px;
+                                    .qodef-time-day, .qodef-time-month {
+                                        font-family: Marcellus,serif;
+                                        line-height: 26px;
+                                    }
+                                }
+                                .qodef-e-media {
+                                    position: relative;
+                                    display: inline-block;
+                                    width: 100%;
+                                    vertical-align: top;
+                                    .qodef-e-media-image {
+                                        margin-bottom: 24px!important;
+                                        position: relative;
+                                        display: inline-block;
+                                        vertical-align: top;
+                                        max-width: 100%;
+                                        overflow: hidden;
+                                        a {
+                                            display: block;
+                                            width: 100%;
+                                            img {
+                                                display: block;
+                                                width: 100%;
+                                                transition: transform .3s ease-in-out;
+                                            }
+                                        }
+                                    }
+                                }
+                                .qodef-e-content {
+                                    position: relative;
+                                    display: inline-block;
+                                    width: 100%;
+                                    vertical-align: top;
+                                    .qodef-e-top-holder {
+                                        display: none;
+                                        margin-bottom: 0;
+                                        .qodef-e-info {
+                                            >* {
+                                                display: inline-flex;
+                                                vertical-align: middle;
+                                                font-family: "DM Sans",sans-serif;
+                                                font-size: 15px;
+                                                line-height: 1.6em;
+                                                color: #797979;
+                                                flex-wrap: wrap;
+                                            }
+                                            .qodef-info-separator-end {
+                                                color: initial;
+                                                :last-of-type {
+                                                    display: none;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .qodef-e-text {
+                                        .entry-title {
+                                            margin: 0;
+                                            font-family: Marcellus,serif;
+                                            font-weight: 400;
+                                            color: #000;
+                                            font-size: 28px;
+                                            line-height: 1.28em;
+                                            -ms-word-wrap: break-word;
+                                            word-wrap: break-word;
+                                            a {
+                                                display: inline-block;
+                                                width: auto;
+                                                background-repeat: no-repeat;
+                                                background-image: linear-gradient(transparent calc(100% - 1px),currentColor 1px);
+                                                transition: .6s cubic-bezier(.215,.61,.355,1);
+                                                background-size: 0 97%;
+                                            }
+                                        }
+                                        .qodef-e-excerpt {
+                                            margin: 15px 0 0;
+                                            ::after {
+                                                content: '';
+                                                clear: both;
+                                                display: table;
+                                            }
+                                        }
+                                    }
+                                    .qodef-e-bottom-holder {
+                                        margin-top: 12px;
+                                        display: flex;
+                                        flex-wrap: wrap;
+                                        align-items: center;
+                                        margin-bottom: 18px;
+                                        .qodef-e-left {
+                                            flex-basis: 50%;
+                                            .qodef-button.qodef-layout--textual {
+                                                position: relative;
+                                                padding: 0;
+                                                color: var(--qode-main-color);
+                                                background-color: transparent;
+                                                border: 0;
+                                                .qodef-m-text {
+                                                    display: inline-block;
+                                                    ::after {
+                                                        content: "\e87a";
+                                                        font-family: Linearicons-Free;
+                                                        font-weight: 500;
+                                                        position: absolute;
+                                                        right: -17px;
+                                                        bottom: 0;
+                                                        color: var(--qode-main-color);
+                                                        transition: all .3s ease-in-out;
+                                                    }
+                                                }
+                                            }
+                                            .qodef-button.qodef-html--link {
+                                                position: relative;
+                                                display: inline-flex;
+                                                vertical-align: middle;
+                                                font-family: "DM Sans",sans-serif;
+                                                font-size: 13px;
+                                                letter-spacing: .2em;
+                                                line-height: 1.3em;
+                                                font-weight: 500;
+                                                width: auto;
+                                                margin: 0;
+                                                text-decoration: none;
+                                                text-transform: uppercase;
+                                                border-radius: 0;
+                                                outline: 0;
+                                                transition: color .2s ease-out,border-color .2s ease-out;
+                                            }
+                                        }
+                                        .qodef-e-right {
+                                            flex-basis: 50%;
+                                            text-align: right;
+                                        }
+                                    }
+                                }
+                                .qodef-e-quote {
+                                    display: inline-block;
+                                    width: 100%;
+                                    vertical-align: top;
+                                    padding: 70px 54px 71px;
+                                    background-color: #f8f2ed;
+                                    text-align: center;
+                                    .qodef-e-quote-text {
+                                        font-size: 28px;
+                                    }
+                                    .qodef-e-quote-author {
+                                        position: relative;
+                                        display: block;
+                                        margin: 23px 0 0;
+                                        color: #000;
+                                        font-size: 12px;
+                                        text-transform: uppercase;
+                                        font-weight: 500;
+                                        letter-spacing: .24em;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        :not(.elementor-bc-flex-widget) .elementor-widget-wrap {
+            display: flex;
+        }
+    }
+    
+    #qodef-page-inner {
+        padding: 30px 0px 174px 0px;
+        position: relative;
+        .qodef-grid {
+            display: inline-block;
+            width: 100%;
+            vertical-align: top;
+            >.qodef-grid-inner {
+                margin: 0 -15px;
+                ::before {
+                    content: '';
+                    display: table;
+                    table-layout: fixed;
+                }
+            }
+            .qodef-grid>.qodef-grid-inner>.qodef-grid-item {
+                padding: 0 30px;
+            }
+            .qodef-grid-item {
+                display: inline-block;
+                vertical-align: top;
+                min-height: 1px;
+                float: left;
+            }
+        }
+        .qodef-layout--template {
+            .qodef-page-content-section.qodef-col--12 {
+                margin-bottom: 0;
+            }
+        }
+        @media only screen and (min-width: 1025px) {
+            .qodef-grid.qodef-layout--template > .qodef-grid-inner > .qodef-grid-item.qodef-col--12 {
+                width: 100%;
+            }
+        }
+    }
+}

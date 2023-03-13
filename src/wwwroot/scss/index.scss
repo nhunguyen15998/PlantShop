@@ -42,10 +42,10 @@ body .container-fluid {
                     >li {
                         min-width: 150px;
                     }
-                    .active a, >li>a:focus, >li>a:hover {
-                        background-clip: -webkit-linear-gradient(left, #2AF598, #009EFD 100%);
-                        // -webkit-background-clip: text;
-                        // -webkit-text-fill-color: transparent;
+                    .active a.parent-node, >li>a.parent-node:focus, >li>a.parent-node:hover {
+                        background: -webkit-linear-gradient(left, #2AF598, #009EFD 100%);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
                         font-weight: 700;
                     }
                 }
@@ -85,6 +85,72 @@ body .container-fluid {
                             >li {
                                 float: none;
                                 display: inline-block;
+                                position: relative;
+                                .menu-items {
+                                    position: absolute;
+                                    top: 100%;
+                                    left: -32px;
+                                    display: block;
+                                    width: auto;
+                                    .submenu-inner {
+                                        position: relative;
+                                        display: inline-block;
+                                        width: 100%;
+                                        vertical-align: top;
+                                        ul.submenu {
+                                            position: relative;
+                                            top: auto;
+                                            opacity: 1;
+                                            visibility: visible;
+                                            left: 0;
+                                            width: 200px;
+                                            margin: 0;
+                                            padding: 15px 0;
+                                            background-color: #222121;
+                                            list-style: none;
+                                            li.menu-item {
+                                                padding: 0 8px 0 32px;
+                                                position: relative;
+                                                margin: 0;
+                                                background: 0 0;
+                                                border: 0;
+                                                outline: 0;
+                                                vertical-align: baseline;
+                                                a {
+                                                    position: relative;
+                                                    display: flex;
+                                                    white-space: normal;
+                                                    margin: 0;
+                                                    overflow: hidden;
+                                                    transition: padding .2s ease-out;
+                                                    padding-right: 15px;
+                                                    font-family: "DM Sans",sans-serif;
+                                                    font-size: 15px;
+                                                    line-height: 1.6em;
+                                                    font-weight: 400;
+                                                    color: #f7f7f7;
+                                                    cursor: pointer;
+                                                    text-decoration: none;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                .menu-items-hidden {
+                                    height: 0;
+                                    opacity: 0;
+                                    visibility: hidden;
+                                    overflow: hidden;
+                                    z-index: 10;
+                                }
+                                .menu-items-shown {
+                                    visibility: visible;
+                                    height: 200px;
+                                    opacity: 1;
+                                    overflow: visible;
+                                    z-index: 20;
+                                    transition: opacity .2s ease-out;
+                                }
                             }
                             >li li {
                                 text-align: left
@@ -512,7 +578,7 @@ body .footer {
             }
             @media (min-width: 1200px) {
                 button {
-                    right: 44px;
+                    right: 53px;
                 }
             }
             @media (max-width: 991px) {

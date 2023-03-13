@@ -42,7 +42,8 @@
                                 <li><a href="#"><span class="icon-location-arrow mr-3"></span>Contact</a></li>
                                 @if (phone != null)
                                 {
-                                    <li><a href='@Url.ActionLink("SignOut", "Authentication")'><span class="icon-location-arrow mr-3"></span>Sign Out</a></li>
+                                    <li><a href='@Url.ActionLink("SignOut", "Authentication")'><span
+                                                class="icon-location-arrow mr-3"></span>Sign Out</a></li>
                                 }
                             </ul>
                         </div>
@@ -52,30 +53,79 @@
                     <i class="fa-solid fa-bag-shopping"></i>
                     <div><span>1</span></div>
                 </div>
-                @if(phone != null)
+                @if (phone != null)
                 {
                     <div class="shopping-bag sign-out" style="right: -70px;">
-                        <a href='@Url.ActionLink("SignOut", "Authentication")'><i class="fa-solid fa-right-from-bracket"></i></a>
+                        <a href='@Url.ActionLink("SignOut", "Authentication")'><i
+                                class="fa-solid fa-right-from-bracket"></i></a>
                     </div>
                 }
             </div>
             <div class="collapse navbar-collapse" id="centerednav">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Shop</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li class="active">
+                        <a class="parent-node" href="#">Home</a>
+                    </li>
+                    <li>
+                        <a class="parent-node" href="#">Shop</a>
+                        <div class="menu-items menu-items-hidden">
+                            <div class="submenu-inner">
+                                <ul class="submenu">
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1664">
+                                        <a href="#">
+                                            <span class="qodef-menu-item-text">Main Home</span>
+                                        </a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2897">
+                                        <a href="#">
+                                            <span class="qodef-menu-item-text">Olive Oil Shop</span>
+                                        </a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1665">
+                                        <a href="#">
+                                            <span class="qodef-menu-item-text">Olive Farm</span>
+                                        </a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4423">
+                                        <a href="#">
+                                            <span class="qodef-menu-item-text">Landing</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="parent-node" asp-controller="Blog" asp-action="BlogList">Blog</a>
+                    </li>
+                    <li>
+                        <a class="parent-node" href="#">About Us</a>
+                    </li>
+                    <li>
+                        <a class="parent-node" href="#">Contact</a>
+                    </li>
                     @* @if (phone != null)
                     {
-                        <li><a href="#"><span class="icon-location-arrow mr-3"></span>@user</a></li>
+                    <li><a href="#"><span class="icon-location-arrow mr-3"></span>@user</a></li>
                     }
                     else
                     {
-                        <li><a href='@Url.ActionLink("SignIn", "Authentication")'>Log In/Register</a></li>
+                    <li><a href='@Url.ActionLink("SignIn", "Authentication")'>Log In/Register</a></li>
                     } *@
                 </ul>
                 @await Html.PartialAsync("../_LoginPartial.cshtml")
             </div>
         </div>
     </div>
+    <script>
+        $('.navbar-nav li').hover(
+            function() {
+                $(this).children(".menu-items").addClass("menu-items-shown");
+                $(this).children(".menu-items").removeClass("menu-items-hidden");
+            }, function() {
+                $(this).children(".menu-items").addClass("menu-items-hidden");
+                $(this).children(".menu-items").removeClass("menu-items-shown");
+            }
+        )
+    </script>
 </div>

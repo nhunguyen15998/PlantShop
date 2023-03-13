@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["variables.scss"],"names":[],"mappings":"AAGA","file":"variables.css","sourcesContent":["$fontWorkSan: 'Work Sans', sans-serif;\r\n$mobile-width: 600px;\r\n\r\n/*background colors*/\r\n$signinBackground: linear-gradient(180deg, rgba(235,215,230,1) 0%, rgba(228,235,251,1) 50%, rgba(238,241,243,1) 100%);\r\n"]}

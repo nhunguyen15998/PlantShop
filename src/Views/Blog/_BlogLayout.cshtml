@@ -1,25 +1,29 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@(ViewData["Title"] ?? "Home")</title>
+    <title>@(ViewData["Title"] ?? "Blog")</title>
     @await Html.PartialAsync("~/Views/Shared/Partials/_Styles.cshtml")
-    @* https://amfissa.qodeinteractive.com/about-us/ *@
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,700;1,300;1,600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/blog.css">
 </head>
 
 <body>
     <div class="container-fluid">
-        @if (ViewData["Title"]?.ToString() == "Home Page") {
-            <div class="header-area">
-                @await Html.PartialAsync("~/Views/Shared/Partials/_Header.cshtml")
-                <div class="header-background-gradient"></div>
-            </div>
-        }
         <div class="content container">
-            @RenderBody()
+            <div id="qodef-page-outer">
+                @await Html.PartialAsync("~/Views/Shared/Partials/_BlogBreadcrumb.cshtml")
+                <div id="qodef-page-inner" class="qodef-content-grid">
+                    <main id="qodef-page-content" class="qodef-grid qodef-layout--template " role="main">
+                        <div class="qodef-grid-inner clear">
+                            @RenderBody()
+                        </div>
+                    </main>
+                </div>
+            </div>
         </div>
     </div>
 
